@@ -5,7 +5,7 @@ describe('Primer Conjunto de Casos de Prueba', function() {
         //paso 1
         //paso 2
         //paso 3
-        cy.visit("https://www.google.com/");
+        cy.visit("http://automationpractice.com/index.php");
 
     });
     //Caso de prueba  2
