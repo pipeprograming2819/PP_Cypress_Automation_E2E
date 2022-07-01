@@ -5,7 +5,7 @@ describe('Primer Conjunto de Casos de Prueba', function() {
         //paso 1
         //paso 2
         //paso 3
-        cy.visit("https://atenaconocimientos.net");
+        cy.visit("https://www.google.com/");
 
     });
     //Caso de prueba  2
