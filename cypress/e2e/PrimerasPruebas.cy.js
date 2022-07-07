@@ -19,6 +19,15 @@ describe('Primer Conjunto de Casos de Prueba', function() {
     });
 
     //Caso de prueba  2
+    it('Agregar el elemento tipo blouse al carro de compras desde la pagina principal', function() {
+
+        //Ingresamos a la pagina
+        cy.visit("http://automationpractice.com/index.php");
+
+
+        cy.get('#homefeatured .product-container').as('ProductosPopulares');
+
+    });
     //Caso de prueba  3   
 
 });
