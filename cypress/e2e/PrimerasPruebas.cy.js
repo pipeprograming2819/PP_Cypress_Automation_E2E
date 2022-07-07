@@ -33,11 +33,11 @@ describe('Primer Conjunto de Casos de Prueba', function() {
 
                 if ($el.attr('title') === 'Blouse') {
                     cy.log('Se ha encontrado el elemento buscado')
-
+                    cy.get('@ProductosPopulares').eq(index).contains('Add to cart').click()
                 }
 
             })
-        cy.get('@ProductosPopulares').eq(1).contains('Add to cart').click()
+
 
     });
     //Caso de prueba  3   
