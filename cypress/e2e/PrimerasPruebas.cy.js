@@ -8,7 +8,9 @@ describe('Primer Conjunto de Casos de Prueba', function() {
         cy.visit("http://automationpractice.com/index.php");
 
         //Verificar la cantidad de elementos disponibles
-        cy.get('#homefeatured.produc-container').should('have.', 7)
+        cy.get('#homefeatured .product-container').should('have.length', 7);
+
+
     });
     //Caso de prueba  2
     //Caso de prueba  3   
