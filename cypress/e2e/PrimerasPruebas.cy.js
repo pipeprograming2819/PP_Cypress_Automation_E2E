@@ -51,18 +51,21 @@ describe('Primer Conjunto de Casos de Prueba', function() {
             .each(($el, index, $list) => {
 
                 cy.get('@ProductosPopulares').eq(index).find('.price').then(function($el1) {
-                    let precio = $el1.text()
-                    cy.log(precio)
+                        let precio = $el1.text()
+                        cy.log(precio)
 
-                    if ($el.attr('title') === 'Printed Dress' && precio.includes('26.00')) {
-                        cy.log('Se ha encontrado el elemento buscado');
-                        cy.log('Se ha encontrado el precio buscado');
-                        cy.get('@ProductosPopulares').eq(index).contains('Add to cart').click();
-                    }
-                })
+                        if ($el.attr('title') === 'Printed Dress' && precio.includes('26.00')) {
+                            cy.log('Se ha encontrado el elemento buscado');
+                            cy.log('Se ha encontrado el precio buscado');
+                            cy.get('@ProductosPopulares').eq(index).contains('Add to cart').click();
+                        }
+                    })
+                    // Se debe llamar  siempre la clase indicando un punto
             })
-
+        cy.get('.ajax_cart_product_txt').should('contain.text', 'There is 1 item in your cart.')
+            .should('be.visible')
     });
+
     //Caso de prueba  4       
 
 });
