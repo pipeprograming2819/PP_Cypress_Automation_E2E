@@ -24,8 +24,20 @@ describe('Primer Conjunto de Casos de Prueba', function() {
         //Ingresamos a la pagina
         cy.visit("http://automationpractice.com/index.php");
 
-
         cy.get('#homefeatured .product-container').as('ProductosPopulares');
+
+        // iteramos para encontrar un producto con un nombre x
+        cy.get('@ProductosPopulares')
+            .find('.product-name')
+            .each(($el, index, $list) => {
+
+                if ($el.attr('title') === 'Blouse') {
+                    cy.log('Se ha encontrado el elemento buscado')
+
+                }
+
+            })
+        cy.get('@ProductosPopulares').eq(1).contains('Add to cart').click()
 
     });
     //Caso de prueba  3   
