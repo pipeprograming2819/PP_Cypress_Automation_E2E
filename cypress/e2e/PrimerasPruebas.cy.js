@@ -67,5 +67,10 @@ describe('Primer Conjunto de Casos de Prueba', function() {
     });
 
     //Caso de prueba  4       
+    it('Verificamos que el drop down , tenga los elementos necesarios', function() {
+
+        //Flotamos sobre un elemento  
+        //  cy.get('id')
+    })
 
 });
