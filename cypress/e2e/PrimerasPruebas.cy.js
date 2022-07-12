@@ -38,7 +38,6 @@ describe('Primer Conjunto de Casos de Prueba', function() {
 
             })
 
-
     });
     //Caso de prueba  3
     it('Agregar el elemento tipo "Printed Dress" al carro de compras desde la pagina principal', function() {
@@ -70,7 +69,7 @@ describe('Primer Conjunto de Casos de Prueba', function() {
     it('Verificamos que el drop down , tenga los elementos necesarios', function() {
 
         //Flotamos sobre un elemento  
-        //  cy.get('id')
+        cy.get('#block_top_menu > ul > li:nth-child(1) > ul').invoke('attr', 'style', 'display: block')
     })
 
 });
