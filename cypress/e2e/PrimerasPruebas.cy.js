@@ -1,4 +1,4 @@
-/// <reference types="cypress"/>
+/// <reference types="cypress"/> 
 //Suite de casos que contiene cada caso
 describe('Primer Conjunto de Casos de Prueba', function() {
 
@@ -9,14 +9,10 @@ describe('Primer Conjunto de Casos de Prueba', function() {
 
     //Caso de prueba 1
     it('Contabilizar la cantidad de elemento en la sesion de pagina principal', function() {
-
         //Verificar la cantidad de elementos disponibles
         cy.get('#homefeatured .product-container').should('have.length', 7);
-
         //Obtenemos el element homefeatured .product-container como un parametro
-
         cy.get('#homefeatured .product-container').as('ProductosPopulares');
-
         //Verificamos  nuevamente la cantidad de elementos utilizando el parametro
         cy.get('@ProductosPopulares').should('have.length', 7);
     });
@@ -25,7 +21,6 @@ describe('Primer Conjunto de Casos de Prueba', function() {
     it('Agregar el elemento tipo blouse al carro de compras desde la pagina principal', function() {
 
         cy.get('#homefeatured .product-container').as('ProductosPopulares');
-
         // iteramos para encontrar un producto con un nombre x
         cy.get('@ProductosPopulares')
             .find('.product-name')
@@ -81,6 +76,10 @@ describe('Primer Conjunto de Casos de Prueba', function() {
         })
         //Uso  de Checkbox  
     it('Verificar Checkbox funcional', function() {
+        cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click()
+        cy.get('li[class="margin hidable col-lg-6"]:has(a[href*="categories-casual_dresses"]) input').check().should('be.checked')
+        cy.get('li[class="margin hidable col-lg-6"]:has(a[href*="categories-evening_dresses"]) input').should('not.be.checked')
+        cy.get('li[class="margin hidable col-lg-6"]:has(a[href*="categories-summer_dresses"]) input').should('not.be.checked')
 
     })
 
