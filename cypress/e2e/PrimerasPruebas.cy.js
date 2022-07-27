@@ -56,8 +56,7 @@ describe('Primer Conjunto de Casos de Prueba', function() {
                     })
                     // Se debe llamar  siempre la clase indicando un punto
             })
-        cy.get('.ajax_cart_product_txt').should('contain.text', 'There is 1 item in your cart.')
-            .should('be.visible')
+
     });
 
     //Caso de prueba  4       
@@ -74,12 +73,23 @@ describe('Primer Conjunto de Casos de Prueba', function() {
             cy.get('a[title^="Summer"]').should('be.visible')
 
         })
-        //Uso  de Checkbox  
+        //Caso de prueba  5 Uso  de Checkbox  
     it('Verificar Checkbox funcional', function() {
         cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click()
-        cy.get('li[class="margin hidable col-lg-6"]:has(a[href*="categories-casual_dresses"]) input').check().should('be.checked')
-        cy.get('li[class="margin hidable col-lg-6"]:has(a[href*="categories-evening_dresses"]) input').should('not.be.checked')
-        cy.get('li[class="margin hidable col-lg-6"]:has(a[href*="categories-summer_dresses"]) input').should('not.be.checked')
+        cy.get('li[class="nomargin  hiddable  col-lg-6"]:has(a[href*="categories-casual_dresses"]) input').check().should('be.checked')
+        cy.wait(10000);
+        cy.get('li[class="nomargin  hiddable  col-lg-6"]:has(a[href*="categories-evening_dresses"]) input').should('not.be.checked')
+        cy.wait(10000);
+        cy.get('li[class="nomargin  hiddable  col-lg-6"]:has(a[href*="categories-summer_dresses"]) input').should('not.be.checked')
+
+    })
+
+    //Caso de prueba  6 Seleccionando un elemento del dropdowns
+    it('Verificar los dropdown de arreglo esten funcionales', function() {
+        cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click()
+        cy.get('#selectProductSort').select('In stock')
+
+
 
     })
 
