@@ -76,11 +76,9 @@ describe('Primer Conjunto de Casos de Prueba', function() {
         //Caso de prueba  5 Uso  de Checkbox  
     it('Verificar Checkbox funcional', function() {
         cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click()
-        cy.get('li[class="nomargin  hiddable  col-lg-6"]:has(a[href*="categories-casual_dresses"]) input').check().should('be.checked')
-        cy.wait(10000);
-        cy.get('li[class="nomargin  hiddable  col-lg-6"]:has(a[href*="categories-evening_dresses"]) input').should('not.be.checked')
-        cy.wait(10000);
-        cy.get('li[class="nomargin  hiddable  col-lg-6"]:has(a[href*="categories-summer_dresses"]) input').should('not.be.checked')
+        cy.get('li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-casual_dresses"]) input').check().should('be.checked')
+        cy.get('li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-evening_dresses"]) input').should('not.be.checked')
+        cy.get('li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-summer_dresses"]) input').should('not.be.checked')
 
     })
 
