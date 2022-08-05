@@ -84,8 +84,16 @@ describe('Primer Conjunto de Casos de Prueba', function() {
 
     //Caso de prueba  6 Seleccionando un elemento del dropdowns
     it('Verificar los dropdown de arreglo esten funcionales', function() {
-        cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click()
-        cy.get('#selectProductSort').select('In stock')
+            cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click()
+            cy.get('#selectProductSort').select('name:asc')
+
+        })
+        //Caso de prueba 
+    it('Realizar una compra desde cero', function() {
+        cy.get('#search_query_top').type('Blouse')
+        cy.get('#searchbox > .btn').click()
+        cy.get('.product-container:has(.product-name[title="Blouse"]).ajax_dd_to_cart_button').click()
+        cy.get('.button-medium[title="Proceed to checkout"]').click()
 
 
 
